@@ -34,7 +34,7 @@ determing the p and q values,then make plots.diff=1
 acf(training,lag.max = 50)
 pacf(training,lag.max = 50)
 ```
-![Image of Yaktocat](http://github.com/lzmpikapika/bitcoin-prediction/raw/master/acf.jpg)
+![Image](http://github.com/lzmpikapika/bitcoin-prediction/raw/master/acf.jpg)
 when the value=1 there has a peak, so the diff=1
 ```
 difftraining <- diff(training,1)
@@ -81,7 +81,7 @@ forecasrvaluet <- as.numeric(forecasrvalues1$mean)
 testforecast <- exp(forecasrvaluet)
 testforecast
 ```
-![Image of Yaktocat](http://github.com/lzmpikapika/bitcoin-prediction/raw/master/ARIMA.jpg)
+![Image](http://github.com/lzmpikapika/bitcoin-prediction/raw/master/ARIMA.jpg)
 # svr
 load package
 ```
@@ -103,7 +103,7 @@ regressor <- svm(formula=price~close+volume,data=new_bit,
 summary(regressor)
 ```
 predicted the value use validation data.
-![Image of Yaktocat](http://github.com/lzmpikapika/bitcoin-prediction/raw/master/svrval.jpg)
+![Image](http://github.com/lzmpikapika/bitcoin-prediction/raw/master/svrval.jpg)
 usd plot show the changes
 ```
 ggplot()+
@@ -113,10 +113,10 @@ ggplot()+
   xlab('close')+
   ylab('volume traded')
 ```
-![Image of Yaktocat](http://github.com/lzmpikapika/bitcoin-prediction/raw/master/svrprediction.jpg)
+![Image](http://github.com/lzmpikapika/bitcoin-prediction/raw/master/svrprediction.jpg)
 No.484 row test.price is 2020.04.27 close price,and price predict result is forecast the 2020.04.28 opening price.It is decline, can consider selling.
 ```{r}
 pricecomparetest <- data.frame(bittest$price,pricepredict1)
 pricecomparetest
 ```
-![Image of Yaktocat](http://github.com/lzmpikapika/bitcoin-prediction/raw/master/svrtestprice.jpg)
+![Image](http://github.com/lzmpikapika/bitcoin-prediction/raw/master/svrtestprice.jpg)
